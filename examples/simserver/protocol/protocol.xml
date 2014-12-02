@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!--
+** 类型枚举:
+		char: 	1 byte
+		short: 	2 bytes
+		int: 	4 bytes
+		long: 	8 bytes *暂不支持
+		bool: 	1 byte
+		double: 8 bytes
+		string: many bytes
+** 字段枚举:
+		v: 单一字段
+		o: 对象
+		ary: 长度不定的数组
+** 结构类型
+		macro: 宏定义
+		cmd: 协议定义		
+-->
+<protocol rev="0.0.1">
+
+	<!--******************************** 宏声明 ****************************************-->
+
+
+	<!--******************************** 消息声明 ****************************************-->
+
+	<!-- ********* 同步消息:[100-200) ********* -->
+
+	<!--心跳-->
+	<cmd id="100" desc="heartbeat">
+		<v desc="nowtime" type="int"/>
+	</cmd>
+
+	<!-- ********* 本地帐号系统:[200-300) ********* -->
+
+	<!--帐号登录-->
+	<cmd id="200" desc="acct_login_request">
+		<v desc="name" type="string"/>
+		<v desc="password" type="string"/>
+	</cmd>
+
+	<!--帐号登录返回-->
+	<cmd id="201" desc="acct_login_response">
+		<v desc="name" type="string"/>
+		<v desc="retcode" type="bool"/>
+		<v desc="userid" type="string"/>
+	</cmd>
+
+	<!--帐号注册-->
+	<cmd id="202" desc="acct_register_request">
+		<v desc="name" type="string"/>
+		<v desc="password" type="string"/>
+	</cmd>
+
+	<!--帐号注册返回-->
+	<cmd id="203" desc="acct_register_response">
+		<v desc="name" type="string"/>
+		<v desc="retcode" type="bool"/><!-- false:已存在 -->
+	</cmd>
+
+	<!--帐号绑定-->
+	<cmd id="204" desc="acct_bind_request">
+		<v desc="name" type="string"/>
+		<v desc="password" type="string"/>
+		<v desc="userid" type="string"/>
+	</cmd>
+
+	<!--帐号绑定返回-->
+	<cmd id="205" desc="acct_bind_response">
+		<v desc="retcode" type="bool"/>
+	</cmd>
+
+
+	<!-- ***************************************** 以下为服务器间消息 ******************************************* -->
+
+</protocol>
