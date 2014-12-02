@@ -1,6 +1,6 @@
 一个简单的基于zebra框架的server示例程序，该server由三个服务组成，session服务、pay服务和user服务。
 
-先将拷贝build好的shard文件到这级目录下，
+先将拷贝build好的shard文件到这级目录下，然后执行sql里zebra.sql来创建数据库和表。
 启动session服务器  ./shard -r scripts/session/main
 启动pay服务器 ./shard -r scripts/pay/main
 启动user服务器 ./shard -r scripts/user/main
