@@ -2,9 +2,9 @@
 -- main.lua
 --
 
-require "script/conf"
-require "script/common"
-require "script/session/account"
+require "scripts/conf"
+require "scripts/common"
+require "scripts/session/account"
 
 g_variables = 
 {

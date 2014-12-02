@@ -2,8 +2,8 @@
 -- main.lua
 --
 
-require "script/conf"
-require "script/common"
+require "scripts/conf"
+require "scripts/common"
 
 g_variables = 
 {
